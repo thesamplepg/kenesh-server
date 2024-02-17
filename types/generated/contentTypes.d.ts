@@ -1469,30 +1469,10 @@ export interface ApiMainPageMainPage extends Schema.SingleType {
       'oneToMany',
       'api::deputy.deputy'
     >;
-    bills: Attribute.Relation<
-      'api::main-page.main-page',
-      'oneToMany',
-      'api::bill.bill'
-    >;
-    news: Attribute.Relation<
-      'api::main-page.main-page',
-      'oneToMany',
-      'api::post.post'
-    >;
     featured_news: Attribute.Relation<
       'api::main-page.main-page',
       'oneToMany',
       'api::post.post'
-    >;
-    chairmans: Attribute.Relation<
-      'api::main-page.main-page',
-      'oneToMany',
-      'api::deputy.deputy'
-    >;
-    fractions: Attribute.Relation<
-      'api::main-page.main-page',
-      'oneToMany',
-      'api::fraction.fraction'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

@@ -21,30 +21,10 @@
       "relation": "oneToMany",
       "target": "api::deputy.deputy"
     },
-    "bills": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::bill.bill"
-    },
-    "news": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::post.post"
-    },
     "featured_news": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::post.post"
-    },
-    "chairmans": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::deputy.deputy"
-    },
-    "fractions": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::fraction.fraction"
     }
   }
 }

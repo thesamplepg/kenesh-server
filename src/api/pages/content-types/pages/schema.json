@@ -24,22 +24,6 @@
         }
       }
     },
-    "thumbnail": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "date": {
       "type": "date",
       "pluginOptions": {
@@ -51,7 +35,7 @@
     "content": {
       "type": "customField",
       "options": {
-        "preset": "toolbar"
+        "preset": "toolbarBalloon"
       },
       "customField": "plugin::ckeditor5.CKEditor"
     }

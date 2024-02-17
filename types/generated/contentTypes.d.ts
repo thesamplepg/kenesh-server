@@ -1089,69 +1089,42 @@ export interface PluginNavigationNavigationsItemsRelated
   };
 }
 
-export interface ApiAgendaAgenda extends Schema.CollectionType {
-  collectionName: 'agendas';
+export interface ApiAppliesApplies extends Schema.CollectionType {
+  collectionName: 'apply';
   info: {
-    singularName: 'agenda';
-    pluralName: 'agendas';
-    displayName: '\u041F\u043E\u0432\u0435\u0441\u0442\u043A\u0438 \u0434\u043D\u044F';
-    description: '';
+    singularName: 'applies';
+    pluralName: 'apply';
+    displayName: '\u041E\u0431\u0440\u0430\u0449\u0435\u043D\u0438\u044F';
   };
   options: {
     draftAndPublish: true;
   };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
   attributes: {
-    title: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    content: Attribute.RichText &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Date: Attribute.DateTime &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    content1: Attribute.RichText &
-      Attribute.CustomField<
-        'plugin::ckeditor5.CKEditor',
-        {
-          preset: 'toolbar';
-        }
-      >;
+    name: Attribute.String;
+    surname: Attribute.String;
+    lastname: Attribute.String;
+    phone: Attribute.BigInteger;
+    email: Attribute.Email;
+    social_status: Attribute.String;
+    apply_status: Attribute.String;
+    forwho: Attribute.String;
+    theme: Attribute.String;
+    content: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::agenda.agenda',
+      'api::applies.applies',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::agenda.agenda',
+      'api::applies.applies',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::agenda.agenda',
-      'oneToMany',
-      'api::agenda.agenda'
-    >;
-    locale: Attribute.String;
   };
 }
 
@@ -1567,12 +1540,6 @@ export interface ApiPagesPages extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    thumbnail: Attribute.Media &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     date: Attribute.Date &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1583,7 +1550,7 @@ export interface ApiPagesPages extends Schema.CollectionType {
       Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
         {
-          preset: 'toolbar';
+          preset: 'toolbarBalloon';
         }
       >;
     createdAt: Attribute.DateTime;
@@ -1772,7 +1739,7 @@ declare module '@strapi/types' {
       'plugin::navigation.navigation': PluginNavigationNavigation;
       'plugin::navigation.navigation-item': PluginNavigationNavigationItem;
       'plugin::navigation.navigations-items-related': PluginNavigationNavigationsItemsRelated;
-      'api::agenda.agenda': ApiAgendaAgenda;
+      'api::applies.applies': ApiAppliesApplies;
       'api::bill.bill': ApiBillBill;
       'api::broadcast.broadcast': ApiBroadcastBroadcast;
       'api::chairman.chairman': ApiChairmanChairman;

@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * agenda controller
+ * applies controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::agenda.agenda');
+module.exports = createCoreController('api::applies.applies');

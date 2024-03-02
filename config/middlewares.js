@@ -5,7 +5,10 @@ module.exports = [
   {
     name: "strapi::cors",
     config: {
-      origin: [process.env.CLIENT_ORIGIN, "http://localhost:1337"],
+      origin: [
+        process.env.CLIENT_ORIGIN,
+        process.env.SERVER_ORIGIN || "http://localhost:1337",
+      ],
     },
   },
   "strapi::poweredBy",

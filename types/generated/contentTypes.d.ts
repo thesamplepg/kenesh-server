@@ -1129,12 +1129,6 @@ export interface ApiDeputyDeputy extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    content: Attribute.RichText &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     fraction: Attribute.Relation<
       'api::deputy.deputy',
       'manyToOne',
@@ -1150,6 +1144,18 @@ export interface ApiDeputyDeputy extends Schema.CollectionType {
       'manyToMany',
       'api::bill.bill'
     >;
+    content: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
